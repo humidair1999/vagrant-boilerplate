@@ -2,5 +2,5 @@
 
 ### plugins
 
-- vagrant plugin install vagrant-faster
-- vagrant plugin install vagrant-vbguest
+- `vagrant plugin install vagrant-faster`
+- `vagrant plugin install vagrant-vbguest`
