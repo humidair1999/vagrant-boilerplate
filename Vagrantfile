@@ -47,7 +47,13 @@ Vagrant.configure(2) do |config|
   # config.vm.network "private_network", type: "dhcp"
   # config.winnfsd.logging = "on"
 
-  config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".git/"
+  # option 2 - rsync
+  # NOTE: lots of issues with rsync on Windows as of 1.8.1 - cygwin appears to be
+  # a hard requirement, and alternatives like MinGW or cwRsync do not work!
+  # config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".git/"
+
+  # option 3 - samba
+  # config.vm.synced_folder ".", "/vagrant", type: "smb"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
