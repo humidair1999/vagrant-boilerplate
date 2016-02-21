@@ -2,11 +2,13 @@
 
 echo "----------------------------------------------------------"
 echo "update existing apt-get packages"
+echo "----------------------------------------------------------"
 
 # sudo apt-get update
 
 echo "----------------------------------------------------------"
 echo "installing webdev apt-get packages"
+echo "----------------------------------------------------------"
 
 function install_package_if_needed() {
 	# http://askubuntu.com/a/140574
@@ -23,9 +25,17 @@ install_package_if_needed curl
 
 echo "----------------------------------------------------------"
 echo "installing nvm"
+echo "----------------------------------------------------------"
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 
 # source and reload nvm
 export NVM_DIR="/home/vagrant/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+echo "----------------------------------------------------------"
+echo "printing system specs"
+echo "----------------------------------------------------------"
+
+cat /proc/cpuinfo
+cat /proc/meminfo
