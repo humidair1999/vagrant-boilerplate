@@ -39,6 +39,9 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
+  # option 0 - virtualbox share
+  # set up by default; don't need to do anything to enable
+
   # option 1 - nfs
   # requires: https://github.com/winnfsd/vagrant-winnfsd
   # config.vm.synced_folder ".", "/vagrant",
@@ -50,10 +53,18 @@ Vagrant.configure(2) do |config|
   # option 2 - rsync
   # NOTE: lots of issues with rsync on Windows as of 1.8.1 - cygwin appears to be
   # a hard requirement, and alternatives like MinGW or cwRsync do not work!
+  # https://github.com/mitchellh/vagrant/issues/7046
   # config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".git/"
 
-  # option 3 - samba
+  # option 3 - samba, host-based
+  # requires: running vagrant commands in administrative powershell
   # config.vm.synced_folder ".", "/vagrant", type: "smb"
+
+  # option 4 - samba, guest-based
+  # TODO
+
+  # option 5 - unison
+  # TODO
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
